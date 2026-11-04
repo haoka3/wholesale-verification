@@ -1,8 +1,8 @@
 
-(() => {
-  "use strict";
+"use strict";
 
-  const decode = value => atob(value);
+(() => {
+  const decode = (value) => atob(value);
 
   window.APP_CONFIG = Object.freeze({
     SHEET_CSV_URL: decode(
@@ -24,6 +24,8 @@
     STORAGE_KEY: "wholesale_verified_v1",
 
     PHONE_COLUMN: "MKH-LK",
-    CUSTOMER_CODE_COLUMN: "Mã KH"
+    CUSTOMER_CODE_COLUMN: "Ma_KH",
+
+    REDIRECT_DELAY: 700
   });
 })();

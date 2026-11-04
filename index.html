@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+
+  <meta
+    name="description"
+    content="Cổng xác minh thông tin khách hàng đại lý."
+  >
+
+  <title>Xác minh khách hàng đại lý</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main class="page-container">
+
+    <header class="brand">
+      <div class="brand-logo">H</div>
+      <div>
+        <div class="brand-name">HAO STORE</div>
+        <div class="brand-caption">HỆ THỐNG KHÁCH HÀNG ĐẠI LÝ</div>
+      </div>
+    </header>
+
+    <section class="verification-card">
+
+      <div class="card-heading">
+        <div class="heading-icon">✓</div>
+
+        <h1>Xác minh khách hàng</h1>
+
+        <p>
+          Vui lòng nhập số điện thoại hoặc mã khách hàng
+          đã đăng ký để tiếp tục sử dụng hệ thống.
+        </p>
+      </div>
+
+      <form id="verifyForm">
+
+        <label for="customerInput">
+          Số điện thoại hoặc mã khách hàng
+        </label>
+
+        <input
+          id="customerInput"
+          name="customer"
+          type="text"
+          placeholder="Ví dụ: 09xxxxxxxx hoặc KH001342"
+          autocomplete="off"
+          spellcheck="false"
+          required
+        >
+
+        <button id="verifyButton" type="submit">
+          <span id="buttonText">XÁC MINH NGAY</span>
+          <span id="buttonLoading" hidden>ĐANG KIỂM TRA...</span>
+        </button>
+
+      </form>
+
+      <div
+        id="message"
+        class="message"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></div>
+
+      <div class="register-section">
+        <span>Chưa có thông tin khách hàng?</span>
+
+        <a
+          id="registerLink"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Đăng ký khách hàng mới
+        </a>
+      </div>
+
+      <div class="security-note">
+        <span class="security-icon">ⓘ</span>
+        Thông tin xác minh được đối chiếu với danh sách
+        khách hàng đã đăng ký.
+      </div>
+
+    </section>
+
+    <section class="notice-card">
+
+      <div class="notice-heading">
+        <div>
+          <span class="notice-label">THÔNG TIN QUAN TRỌNG</span>
+          <h2>Thông báo dành cho đại lý</h2>
+        </div>
+        <span class="notice-icon">▤</span>
+      </div>
+
+      <iframe
+        id="noticeFrame"
+        title="Thông báo dành cho đại lý"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+
+      <div id="noticeFallback" class="notice-fallback" hidden>
+        Không thể hiển thị thông báo trực tiếp.
+
+        <a
+          id="noticeLink"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mở thông báo tại đây
+        </a>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <p>© HAO STORE · HỆ THỐNG KHÁCH HÀNG ĐẠI LÝ</p>
+    </footer>
+
+  </main>
+
+  <script src="./config.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
