@@ -1,0 +1,29 @@
+
+(() => {
+  "use strict";
+
+  const decode = value => atob(value);
+
+  window.APP_CONFIG = Object.freeze({
+    SHEET_CSV_URL: decode(
+      "aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvZS8yUEFDWC0xdlM0eHE4RDMzZ0JRWXNPSVdsME1CRDBRR3ZCTHltaDhuVG8xbldKVUhfQlFvQzI0NE1TMkQ5N2lXcTZBSXNzdFhCWUpnUDlsQjJGaEhOUi9wdWI/Z2lkPTAmc2luZ2xlPXRydWUmb3V0cHV0PWNzdg=="
+    ),
+
+    REGISTER_FORM_URL: decode(
+      "aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZm9ybXMvZC9lLzFGQUlwUUxTZnVmNURXUlU2RHBOVlhTNkxadjhZSENHSlB3ZU1sdUpTN2R5S0dJbVdDU0lrU1N3L3ZpZXdmb3JtP3VzcD1wdWJsaXNoLWVkaXRvcg=="
+    ),
+
+    NOTICE_DOC_URL: decode(
+      "aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZG9jdW1lbnQvZC9lLzJQQUNYLTF2VHVSVVl3aEx6VDBpYjJjM1V2VDZhbGlKcEVfZW1XdXY1Y0k2czY1Wk1kX0x5YUpfLW9JYzMyOWF1am9uYUEwQmFxdmdxS0tIX1BwYWtGL3B1Yj9lbWJlZGRlZD10cnVl"
+    ),
+
+    PRODUCT_SEARCH_URL: decode(
+      "aHR0cHM6Ly9oYW9rYTMuZ2l0aHViLmlvL3Byb2R1Y3Qtc2VhcmNoLw=="
+    ),
+
+    STORAGE_KEY: "wholesale_verified_v1",
+
+    PHONE_COLUMN: "MKH-LK",
+    CUSTOMER_CODE_COLUMN: "Mã KH"
+  });
+})();
