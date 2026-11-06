@@ -138,6 +138,62 @@
     const tudong_chatbox = new TuDongChat('hTiPuZhyd688YX9_ZFEP-');
     tudong_chatbox.initial();
   </script>
+  <script>
+    // ==UserScript==
+// @name         Đổi link Facebook - Tú Động Chat
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Tự động đổi link icon Facebook trong widget chat
+// @match        *://*/*
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    const FB_URL = 'https://www.facebook.com/truong.a.hao.2024/';
+    const ZALO_URL = '#';      // nếu muốn đổi Zalo thì điền vào
+    const PHONE_URL = '#';     // nếu muốn đổi Hotline thì điền vào
+
+    function updateLinks() {
+        // Facebook icon: <img alt="Facebook logo">
+        document.querySelectorAll('img[alt="Facebook logo"]').forEach(img => {
+            const a = img.closest('a.tdc-clicker');
+            if (a && a.href !== FB_URL) {
+                a.href = FB_URL;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                console.log('✅ Đã đổi link Facebook');
+            }
+        });
+
+        // Zalo icon
+        document.querySelectorAll('img[alt="Zalo logo"]').forEach(img => {
+            if (ZALO_URL === '#') return;
+            const a = img.closest('a.tdc-clicker');
+            if (a && a.href !== ZALO_URL) a.href = ZALO_URL;
+        });
+
+        // Phone icon
+        document.querySelectorAll('img[alt="Phone Icon"]').forEach(img => {
+            if (PHONE_URL === '#') return;
+            const a = img.closest('a.tdc-clicker');
+            if (a && a.href !== PHONE_URL) a.href = PHONE_URL;
+        });
+    }
+
+    // Chạy ngay
+    updateLinks();
+
+    // Widget load động -> theo dõi DOM
+    const observer = new MutationObserver(updateLinks);
+    observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true
+    });
+})();
+  </script>
 
 </body>
 </html>
